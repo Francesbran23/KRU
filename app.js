@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require("express");
 const mysql = require("mysql2");
 const bodyParser = require("body-parser");
@@ -10,11 +12,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const con = mysql.createConnection({
-    host: 'bidiykigptyapxlvbr2w-mysql.services.clever-cloud.com',
-    port: '3306',
-    user: 'ukj8xszbxw0vprst',
-    password: 'shk4kRusD87w9s0wBegK',
-    database: 'bidiykigptyapxlvbr2w'
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE
 });
 
 con.connect(function(err) {
@@ -81,6 +83,6 @@ app.delete('/productos/:id', (req, res) => {
 });
 
 // Escuchar en el puerto 3400
-app.listen(3800, () => {
-    console.log('Servidor escuchando en el puerto 3800');
+app.listen(4200, () => {
+    console.log('Servidor escuchando en el puerto 4200');
 });
