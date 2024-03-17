@@ -83,6 +83,6 @@ app.delete('/productos/:id', (req, res) => {
 });
 
 // Escuchar en el puerto 3400
-app.listen(4200, () => {
-    console.log('Servidor escuchando en el puerto 4200');
+app.listen(5400, () => {
+    console.log('Servidor escuchando en el puerto 5400');
 });
