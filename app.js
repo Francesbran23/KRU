@@ -19,6 +19,8 @@ const con = mysql.createConnection({
     database: process.env.MYSQL_ADDON_DB
 });
 
+
+//es solo uun toast 
 con.connect(function(err) {
     if (err) {
         console.error('Error de conexión:', err);
@@ -83,6 +85,6 @@ app.delete('/productos/:id', (req, res) => {
 });
 
 // Escuchar en el puerto 3400
-app.listen(5400, () => {
-    console.log('Servidor escuchando en el puerto 5400');
+app.listen(5800, () => {
+    console.log('Servidor escuchando en el puerto 5800');
 });
